@@ -1,0 +1,36 @@
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS actors;
+DROP TABLE IF EXISTS agents;
+DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS studios;
+
+CREATE TABLE studios (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT
+);
+
+CREATE TABLE movies (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  released INTEGER,
+  rating TEXT,
+  studio_id INTEGER
+);
+
+CREATE TABLE agents (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT
+);
+
+CREATE TABLE actors (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT,
+  agent_id INTEGER
+);
+
+CREATE TABLE roles (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  character TEXT,
+  movie_id INTEGER,
+  actor_id INTEGER
+);
